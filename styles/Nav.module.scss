@@ -1,7 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
 .menu {
-    // background-color: aqua;
-    width: 100%;
+    width: 100vw;
+    height: 10vh;
+    overflow-x: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 3vw 0px 3vw;
+    &__logo {
+        > a {
+            text-decoration: none;
+            font-family: 'Comfortaa', cursive;
+            font-size: 1.2em;
+        }
+    }
+    &__toggle {
+        justify-self: end;
+        outline: none;
+        background: transparent;
+        border: 1px solid transparent;
+    }
     &__list {
+        position: absolute;
         list-style: none;
         &-hidden {
             display: none;

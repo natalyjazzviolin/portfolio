@@ -1,0 +1,10 @@
+.menu {
+    // background-color: aqua;
+    width: 100%;
+    &__list {
+        list-style: none;
+        &-hidden {
+            display: none;
+        }
+    }
+}

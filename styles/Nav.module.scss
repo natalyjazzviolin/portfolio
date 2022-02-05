@@ -5,28 +5,61 @@
     height: 10vh;
     overflow-x: none;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 70vw 20vw;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 3vw 0px 3vw;
+    // padding: 0px 3vw 0px 3vw;
+    &__list {
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        list-style: none;
+        width: 100vw;
+        display: grid;
+        grid-auto-rows: 10vh;
+        justify-content: center;
+        padding-top: 15vh;
+        height: 100vh;
+        clip-path: circle(396px at 301px 4px);
+        animation: fadeIn 300ms;
+        background-color: rgb(153, 237, 237);
+        backdrop-filter: blur(10px);
+        opacity: .8;
+        > li {
+            height: 10vh;
+            > a {
+                text-decoration: none;
+                font-size: 1.7em;
+            }
+        }
+        &-hidden {
+            display: none;
+        }
+    }
     &__logo {
         > a {
             text-decoration: none;
             font-family: 'Comfortaa', cursive;
             font-size: 1.2em;
+            padding-left: 5vw;
         }
     }
     &__toggle {
         justify-self: end;
+        padding-right: 5vw;
         outline: none;
         background: transparent;
         border: 1px solid transparent;
+        z-index: 5;
     }
-    &__list {
-        position: absolute;
-        list-style: none;
-        &-hidden {
-            display: none;
-        }
-    }
+}
+
+// Animation for mobile menu
+@-webkit-keyframes fadeIn {
+    from { clip-path: circle(5px at 307px 4px); }
+    to { clip-path: circle(396px at 301px 4px); }
+}
+@keyframes fadeIn {
+    from { clip-path: circle(5px at 307px 4px); }
+    to { clip-path: circle(396px at 301px 4px); }
 }

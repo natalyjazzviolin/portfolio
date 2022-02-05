@@ -41,7 +41,7 @@ const Navbar = () => {
     };
 
     return (
-      <nav className="menu">
+      <nav className='menu'>
         <div className="menu__logo">
           <a href="#">nataly merezhuk</a>
         </div>

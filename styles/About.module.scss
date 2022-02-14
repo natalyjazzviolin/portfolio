@@ -1,0 +1,19 @@
+.about {
+    display: grid;
+    &__container {
+        display: grid;
+        justify-content: center;
+        &-photo {
+            border-radius: 50%;
+            // height: 200px;
+            // width: 200px;
+            // justify-self: center;
+        }
+    }
+    &__bio {
+        padding: 5vh 8vw;
+        font-size: 1.5em;
+        // text-align: justify;
+        letter-spacing: .5px;
+    }
+}

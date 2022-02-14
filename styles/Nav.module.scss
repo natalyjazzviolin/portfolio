@@ -8,7 +8,6 @@
     grid-template-columns: 70vw 20vw;
     justify-content: space-between;
     align-items: center;
-    // padding: 0px 3vw 0px 3vw;
     &__list {
         position: absolute;
         top: 0;
@@ -24,7 +23,6 @@
         animation: fadeIn 300ms;
         background-color: rgb(153, 237, 237);
         backdrop-filter: blur(50%);
-        opacity: .8;
         text-align: center;
         font-family: 'Quicksand', sans-serif;
         text-transform: uppercase;
@@ -61,6 +59,7 @@
 
 @media (min-width: 600px) {
     .menu{
+        height: 15vh;
         grid-template-columns: 60vw 30vw;
         &__logo {
             font-size: 1.8em;

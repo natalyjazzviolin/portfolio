@@ -17,7 +17,7 @@
 html, body {
   height: 100vh;
   width: 100vw;
-  // height: 100%;
+  background-color: rgb(250, 240, 198);
 }
 /*
   Typographic tweaks!
@@ -54,4 +54,6 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+@import './Home.module.scss';
+@import './About.module.scss';
 @import './Nav.module.scss'

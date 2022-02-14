@@ -1,10 +1,14 @@
 import '../styles/Nav.module.scss'
 import { useState } from 'react';
 import { motion } from "framer-motion";
+import { useRef } from 'react';
+import { useCallback } from 'react';
+import { useEffect } from 'react';
 
 const Navbar = () => {
 
     const [open, setOpen] = useState(false);
+    const menuBtn = useRef();
 
     const Clefvariants = {
       open: { opacity: 0, x: "-100%" },
@@ -41,14 +45,19 @@ const Navbar = () => {
     };
 
     return (
-      <nav className='menu'>
+      <header className="menu">
         <div className="menu__logo">
           <a href="#">nataly merezhuk</a>
         </div>
         <button
           className="menu__toggle"
+          id="menubutton"
+          aria-haspopup="true"
+          aria-controls="nav"
+          // tabIndex={-1}
           aria-label="Open menu"
           onClick={() => {
+            document.body.offsetHeight;
             setOpen(!open);
           }}
         >
@@ -87,15 +96,28 @@ const Navbar = () => {
             />
           </svg>
         </button>
-        <ul className={open ? "menu__list" : "menu__list-hidden"}>
-          <li>
-            <a href="#">Latest</a>
-          </li>
-          <li>
-            <a href="#">Blog</a>
-          </li>
-        </ul>
-      </nav>
+        <nav>
+          <ul
+            className={open ? "menu__list" : "menu__list-hidden"}
+            id="nav"
+            role="menu"
+            aria-labelledby="menubutton"
+          >
+            <li role="none">
+              <a role="menuitem" href="#latest" onClick={() => {
+                setOpen(false);
+              }}>
+                Latest
+              </a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="#blog">
+                Blog
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
     );
 }
 

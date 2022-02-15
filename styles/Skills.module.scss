@@ -8,6 +8,7 @@
         padding-left: 4vh;
         margin-bottom: -8vh;
         color: rgb(162, 76, 76);
+        text-transform: uppercase;
     }
     &__skills {
         height: 50vh;
@@ -17,6 +18,7 @@
      radial-gradient(#fafafa 20%, transparent 20%);
         background-position: 0 0, 50px 50px;
         background-size: 10px 10px;
+        color: black;
     }
 
 }
@@ -25,7 +27,7 @@
     .container {
         &__title {
             font-size: 4em;
-            padding-top: 18vh;
+            padding-top: 15vh;
             padding-left: 18%;
             margin-bottom: -15vh;
         }

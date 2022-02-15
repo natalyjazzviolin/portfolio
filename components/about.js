@@ -1,5 +1,4 @@
 import "../styles/About.module.scss"
-import avatar from "../public/avatar.jpeg"
 import Image from "next/image";
 
 export default function About() {
@@ -15,9 +14,9 @@ export default function About() {
             layout="fixed"
           />
         </div>
-          <div className="about__bio">
-            <p> Nataly is a jazz violinist and self-taught fullstack developer. She is currently developing React apps at WizardPig.</p>
-          </div>
+        <div className="about__bio">
+          <p> Nataly is a jazz violinist and self-taught fullstack developer. She is currently working with React, Laravel, and Python at <span className="highlight"><a href="www.wizardpig.com">WizardPig Inc.</a></span></p>
+        </div>
       </section>
     );
 }

@@ -28,6 +28,9 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+p::selection {
+  background: rgb(240, 113, 91);
+}
 /*
   6. Improve media defaults
 */

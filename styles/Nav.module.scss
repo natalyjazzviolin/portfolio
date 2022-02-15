@@ -3,6 +3,7 @@
 .menu {
     width: 100vw;
     height: 10vh;
+    padding-top: 3vh;
     overflow-x: none;
     display: grid;
     grid-template-columns: 70vw 20vw;
@@ -48,6 +49,7 @@
         }
     }
     &__toggle {
+        cursor: pointer;
         justify-self: end;
         padding-right: 5vw;
         outline: none;
@@ -59,10 +61,11 @@
 
 @media (min-width: 600px) {
     .menu{
-        height: 15vh;
+        height: 20vh;
         grid-template-columns: 60vw 30vw;
         &__logo {
-            font-size: 1.8em;
+            font-size: 1.6em;
+            white-space: nowrap;
         }
         &__toggle{
             display: none;
@@ -93,7 +96,7 @@
     .menu{
         grid-template-columns: 60vw 40vw;
         &__logo {
-            font-size: 2.5em;
+            font-size: 2.2em;
             // padding-left: 10vw;
         }
         &__list{

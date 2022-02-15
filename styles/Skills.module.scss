@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+.container {
+    &__title {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 2.5em;
+        padding-top: 5vh;
+        padding-left: 4vh;
+        margin-bottom: -8vh;
+        color: rgb(162, 76, 76);
+    }
+    &__skills {
+        height: 50vh;
+        background: rgb(223, 89, 89);
+        clip-path: polygon(0 36%, 100% 0, 100% 100%, 0% 100%);
+        background-image: radial-gradient(rgb(209, 87, 87) 20%, transparent 20%),
+     radial-gradient(#fafafa 20%, transparent 20%);
+        background-position: 0 0, 50px 50px;
+        background-size: 10px 10px;
+    }
+
+}
+
+@media (min-width: 640px) {
+    .container {
+        &__title {
+            font-size: 4em;
+            padding-top: 18vh;
+            padding-left: 18%;
+            margin-bottom: -15vh;
+        }
+        &__skills {
+            clip-path: polygon(0 54%, 100% 0, 100% 100%, 0% 100%);
+        }
+    }
+}

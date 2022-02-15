@@ -15,7 +15,7 @@ export default function About() {
           />
         </div>
         <div className="about__bio">
-          <p> Nataly is a jazz violinist and self-taught fullstack developer. She is currently working with React, Laravel, and Python at <span className="highlight"><a href="www.wizardpig.com">WizardPig Inc.</a></span></p>
+          <p> Nataly is a jazz violinist and self-taught fullstack developer. She is currently working with React, Laravel, and Python at <span className="highlight"><a target="_blank" href="https://www.wizardpig.com" rel="noreferrer">WizardPig Inc.</a></span></p>
         </div>
       </section>
     );

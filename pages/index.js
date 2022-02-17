@@ -1,11 +1,11 @@
 import About from "../components/about"
-import Latest from "../components/latest"
+import Contact from "../components/contact"
 
 export default function Home() {
   return (
     <div className="main">
       <About />
-      <Latest />
+      <Contact />
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import "../styles/About.module.scss"
+import avatar from "../public/avatar.png"
 import Image from "next/image";
 
 export default function About() {
@@ -7,11 +8,13 @@ export default function About() {
         <div className="about__container">
           <Image
             className="about__container-photo"
-            src="/avatar.png"
+            src={avatar}
             alt="Portrait"
             width={300}
             height={300}
             layout="fixed"
+            priority
+            placeholder="blur"
           />
         </div>
         <div className="about__bio">

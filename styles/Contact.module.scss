@@ -10,7 +10,7 @@
         color: rgb(162, 76, 76);
         text-transform: uppercase;
     }
-    &__latest {
+    &__contact {
         height: 100%;
         padding-bottom: 10vh;
         background: rgb(223, 89, 89);
@@ -31,6 +31,16 @@
             font-family: 'Comfortaa', cursive;
             padding: 5vh;
             font-size: 1.5em;
+            > a {
+                color: rgb(250, 240, 198);
+            }
+        }
+
+        &-social {
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: center;
+            grid-gap: 10vw;
         }
     }
 
@@ -43,9 +53,6 @@
             padding-top: 15vh;
             padding-left: 18%;
             margin-bottom: -15vh;
-        }
-        &__skills {
-            clip-path: polygon(0 54%, 100% 0, 100% 100%, 0% 100%);
         }
     }
 }

@@ -1,0 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Quicksand&display=swap');
+.event {
+    display: grid;
+    background-color: rgb(250, 240, 198);
+    color: tomato;
+    margin: 2vh 5vw;
+    font-size: 1.2em;
+    border-radius: 10px;
+    height: 50px;
+    font-family: 'Comfortaa', cursive;
+    &__tag {
+        position: absolute;
+    }
+}

@@ -11,7 +11,8 @@
         text-transform: uppercase;
     }
     &__latest {
-        height: 50vh;
+        height: 100%;
+        padding-bottom: 10vh;
         background: rgb(223, 89, 89);
         clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
         background-image: radial-gradient(rgb(209, 87, 87) 20%, transparent 20%),

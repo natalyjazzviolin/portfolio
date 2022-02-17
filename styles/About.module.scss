@@ -1,12 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 .about {
+    --border-width: 3px;
     display: grid;
+    justify-items: center;
     grid-template-rows: 1fr;
     &__container {
         display: grid;
         justify-content: center;
-        padding-top: 5vh;
+        padding: 10px;
+        // &::after {
+        //     content: "";
+        //     height: 320px;
+        //     width: 320px;
+        //     background-color: tomato;
+        // }
+        background-color: tomato;
+        height: 320px;
+        width: 320px;
+        border-radius: 50%;
+        // border-radius: var(--border-width);
+        // border-radius: 50%;
         &-photo {
             border-radius: 50%;
         }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Quicksand&display=swap');
 
 .container {
     &__title {
@@ -10,15 +10,27 @@
         color: rgb(162, 76, 76);
         text-transform: uppercase;
     }
-    &__skills {
+    &__latest {
         height: 50vh;
         background: rgb(223, 89, 89);
-        clip-path: polygon(0 36%, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
         background-image: radial-gradient(rgb(209, 87, 87) 20%, transparent 20%),
      radial-gradient(#fafafa 20%, transparent 20%);
         background-position: 0 0, 50px 50px;
         background-size: 10px 10px;
-        color: black;
+        color: rgb(250, 240, 198);
+            text-align: center;
+        > h3 {
+            padding-top: 10vh;
+            font-size: 2em;
+            font-family: 'Quicksand', sans-serif;
+            text-transform: uppercase;
+        }
+        > p {
+            font-family: 'Comfortaa', cursive;
+            padding: 5vh;
+            font-size: 1.5em;
+        }
     }
 
 }

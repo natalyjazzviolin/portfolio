@@ -9,20 +9,12 @@
         display: grid;
         justify-content: center;
         padding: 10px;
-        // &::after {
-        //     content: "";
-        //     height: 320px;
-        //     width: 320px;
-        //     background-color: tomato;
-        // }
         background: conic-gradient( 
             rgb(223, 89, 89) 72deg, orange 72deg 134deg, yellow 134deg 226deg, tomato 226deg 300deg,
             rgb(0, 41, 128) 300deg 360deg);
         height: 320px;
         width: 320px;
         border-radius: 50%;
-        // border-radius: var(--border-width);
-        // border-radius: 50%;
         &-photo {
             border-radius: 50%;
         }

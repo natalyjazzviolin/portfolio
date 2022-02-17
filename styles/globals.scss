@@ -14,6 +14,7 @@
 /*
   3. Allow percentage-based heights in the application
 */
+/* TODO: set global color variables*/
 html, body {
   height: 100vh;
   width: 100vw;
@@ -58,7 +59,8 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-@import './Home.module.scss';
 @import './About.module.scss';
+@import './Event.module.scss';
+@import './Home.module.scss';
 @import './Nav.module.scss';
-@import './Skills.module.scss';
+@import './Latest.module.scss';

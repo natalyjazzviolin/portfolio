@@ -107,7 +107,12 @@ const Navbar = () => {
               <a role="menuitem" href="#latest" onClick={() => {
                 setOpen(false);
               }}>
-                Latest
+                Resume
+              </a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="#blog">
+                Snippets
               </a>
             </li>
             <li role="none">

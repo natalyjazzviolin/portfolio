@@ -1,9 +1,28 @@
 import "../styles/Contact.module.scss";
 import { ReactElement } from "react";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import {
+  fab,
+  faTwitterSquare,
+  faSpotify,
+  faLinkedin,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Contact() {
+
+  const socials = [
+    { icon: faGithub, link: "https://github.com/natalyjazzviolin" },
+    {
+      icon: faLinkedin,
+      link: "https://www.linkedin.com/in/nataly-merezhuk/",
+    },
+    { icon: faTwitterSquare, link: "https://twitter.com/NatalyMerezhuk" },
+    {
+      icon: faSpotify,
+      link: "https://open.spotify.com/artist/2FYFa34QGVgikiF4d9SPwL?si=HkUcMI2ARZucj-srxSq0Jg",
+    },
+  ];
   return (
     <section className="container">
       <div className="container__contact">
@@ -20,10 +39,22 @@ export default function Contact() {
           or find me on social media:
         </p>
         <div className="container__contact-social">
-          <FontAwesomeIcon icon={faCoffee} />
-          <FontAwesomeIcon icon={faCoffee} />
-          <FontAwesomeIcon icon={faCoffee} />
-          <FontAwesomeIcon icon={faCoffee} />
+          { socials.map( social => {
+            return (
+              <a
+                href={social.link}
+                target="_blank"
+                rel="noreferrer"
+                key={social.icon}
+              >
+                <FontAwesomeIcon icon={social.icon} />
+              </a>
+            );
+          })}
+          {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
+          {/* <FontAwesomeIcon icon={faLinkedinIn} className="icon-class" /> */}
+          {/* <FontAwesomeIcon icon={faCoffee} />
+          <FontAwesomeIcon icon={faCoffee} /> */}
         </div>
       </div>
     </section>

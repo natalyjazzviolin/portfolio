@@ -23,6 +23,7 @@ export default function Contact() {
       link: "https://open.spotify.com/artist/2FYFa34QGVgikiF4d9SPwL?si=HkUcMI2ARZucj-srxSq0Jg",
     },
   ];
+  
   return (
     <section className="container">
       <div className="container__contact">
@@ -51,10 +52,6 @@ export default function Contact() {
               </a>
             );
           })}
-          {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
-          {/* <FontAwesomeIcon icon={faLinkedinIn} className="icon-class" /> */}
-          {/* <FontAwesomeIcon icon={faCoffee} />
-          <FontAwesomeIcon icon={faCoffee} /> */}
         </div>
       </div>
     </section>

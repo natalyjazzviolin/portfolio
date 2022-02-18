@@ -42,7 +42,10 @@
             justify-content: center;
             grid-gap: 10vw;
             z-index: 3;
-            // color: rgb(250, 240, 198);
+            > a {
+                color: rgb(250, 240, 198);
+                font-size: 2em;
+            }
         }
     }
 

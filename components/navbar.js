@@ -7,13 +7,12 @@ import { useEffect } from 'react';
 
 const Navbar = () => {
 
+  const links = [
+    { title: 'Resume', to: '/resume'},
+    { title: 'Snippetts', to: '/snippets'},
+    // { title: 'Blog', to: '/blog'},
+  ]
     const [open, setOpen] = useState(false);
-    const menuBtn = useRef();
-
-    const Clefvariants = {
-      open: { opacity: 0, x: "-100%" },
-      closed: { opacity: 1, x: 0 },
-    };
 
     const LeftCrossvariants = {
       open: {
@@ -33,8 +32,6 @@ const Navbar = () => {
         fill: "#f0323f",
         y: "-35%",
         width: "35px",
-        // x: 0,
-        // x: "10%",
         transition: { duration: 0.2 },
       },
       closed: { opacity: 1, rotate: 0, y: 0 },
@@ -103,23 +100,21 @@ const Navbar = () => {
             role="menu"
             aria-labelledby="menubutton"
           >
-            <li role="none">
-              <a role="menuitem" href="#latest" onClick={() => {
-                setOpen(false);
-              }}>
-                Resume
-              </a>
-            </li>
-            <li role="none">
-              <a role="menuitem" href="#blog">
-                Snippets
-              </a>
-            </li>
-            <li role="none">
-              <a role="menuitem" href="#blog">
-                Blog
-              </a>
-            </li>
+            { links.map(link => {
+              return (
+                <li role="none" key={link.title}>
+                  <a
+                    role="menuitem"
+                    href={link.to}
+                    onClick={() => {
+                      setOpen(false);
+                    }}
+                  >
+                    { link.title }
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </header>

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Quicksand&display=swap');
+
+.footer {
+    background-color: rgb(0, 48, 91);
+    color: rgb(250, 240, 198);
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: lowercase;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 5vh;
+
+    &__versions {
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    &__resume {
+        > a {
+            color: rgb(250, 240, 198);;
+            text-decoration: underline;
+        }
+    }
+    &__music {
+        > a {
+            color: rgb(250, 240, 198);;
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .footer {
+        padding-top: 10vh;
+        grid-auto-flow: column;
+        justify-items: center;
+        gap: 2vw;
+    }
+}

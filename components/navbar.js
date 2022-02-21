@@ -1,16 +1,15 @@
 import '../styles/Nav.module.scss'
 import { useState } from 'react';
 import { motion } from "framer-motion";
-import { useRef } from 'react';
-import { useCallback } from 'react';
-import { useEffect } from 'react';
+import Link from 'next/link';
 
 const Navbar = () => {
 
   const links = [
-    { title: 'Resume', to: '/resume'},
+    // { title: 'Resume', to: '/resume'},
     { title: 'Snippetts', to: '/snippets'},
-    // { title: 'Blog', to: '/blog'},
+    { title: 'Projects', to: '/projects'},
+    { title: 'Blog', to: '/blog'},
   ]
     const [open, setOpen] = useState(false);
 
@@ -44,7 +43,7 @@ const Navbar = () => {
     return (
       <header className="menu">
         <div className="menu__logo">
-          <a href="#">nataly merezhuk</a>
+          <Link href="/">nataly merezhuk</Link>
         </div>
         <button
           className="menu__toggle"
@@ -103,7 +102,7 @@ const Navbar = () => {
             { links.map(link => {
               return (
                 <li role="none" key={link.title}>
-                  <a
+                  <Link
                     role="menuitem"
                     href={link.to}
                     onClick={() => {
@@ -111,7 +110,7 @@ const Navbar = () => {
                     }}
                   >
                     { link.title }
-                  </a>
+                  </Link>
                 </li>
               );
             })}

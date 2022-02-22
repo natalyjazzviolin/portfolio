@@ -19,7 +19,10 @@ export default function Project() {
           #Gatsby #React
         </div>
         <div className="project__description-title">
-          Hot Jazz Setlist Generator
+          Jazz Tune Picker
+        </div>
+        <div className="project__description-full">
+          Who has nott been in this situation before: you are in a jam, ready to play the next tune and no one knows what to play next.
         </div>
       </div>
     </div>

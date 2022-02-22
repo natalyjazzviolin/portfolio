@@ -14,17 +14,17 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     const ref = useRef(null);
 
-    useEffect(() => {
-       const closeOpenMenus = (e) => {
-         if (
-           ref.current &&
-           !ref.current.contains(e.target)
-         ) {
-           setOpen(false);
-         }
-       };
-       document.addEventListener("mousedown", closeOpenMenus);
-    })
+    // useEffect(() => {
+    //    const closeOpenMenus = (e) => {
+    //      if (
+    //        ref.current &&
+    //        !ref.current.contains(e.target)
+    //      ) {
+    //        setOpen(false);
+    //      }
+    //    };
+    //    document.addEventListener("mousedown", closeOpenMenus);
+    // })
 
     const LeftCrossvariants = {
       open: {
@@ -115,16 +115,16 @@ const Navbar = () => {
           >
             { links.map(link => {
               return (
-                <li role="none" key={link.title}>
-                  <Link
-                    role="menuitem"
-                    href={link.to}
-                    onClick={() => {
-                      console.log(open)
-                      setOpen(!open);
-                    }}
-                  >
-                    { link.title }
+                <li
+                  role="none"
+                  key={link.title}
+                  onClick={() => {
+                    console.log(`Link!`);
+                    setOpen(false);
+                  }}
+                >
+                  <Link role="menuitem" href={link.to}>
+                    {link.title}
                   </Link>
                 </li>
               );

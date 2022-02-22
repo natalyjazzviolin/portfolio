@@ -1,5 +1,5 @@
 import '../styles/Nav.module.scss'
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from "framer-motion";
 import Link from 'next/link';
 
@@ -7,11 +7,24 @@ const Navbar = () => {
 
   const links = [
     // { title: 'Resume', to: '/resume'},
-    { title: 'Snippetts', to: '/snippets'},
+    { title: 'Snippets', to: '/snippets'},
     { title: 'Projects', to: '/projects'},
     { title: 'Blog', to: '/blog'},
   ]
     const [open, setOpen] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+       const closeOpenMenus = (e) => {
+         if (
+           ref.current &&
+           !ref.current.contains(e.target)
+         ) {
+           setOpen(false);
+         }
+       };
+       document.addEventListener("mousedown", closeOpenMenus);
+    })
 
     const LeftCrossvariants = {
       open: {
@@ -52,6 +65,7 @@ const Navbar = () => {
           aria-controls="nav"
           // tabIndex={-1}
           aria-label="Open menu"
+          ref={ref}
           onClick={() => {
             document.body.offsetHeight;
             setOpen(!open);
@@ -106,7 +120,8 @@ const Navbar = () => {
                     role="menuitem"
                     href={link.to}
                     onClick={() => {
-                      setOpen(false);
+                      console.log(open)
+                      setOpen(!open);
                     }}
                   >
                     { link.title }

@@ -5,6 +5,20 @@
     padding: 10vh 10vw 0 10vw;
     &__title {
         font-family: 'Ubuntu', sans-serif;
-        line-height: 2em;
+        font-size: 1.5em;
+        line-height: 1.7;
+        letter-spacing: .5px;
     }
+    &__list {
+        display: grid;
+        justify-content: center;
+        padding: 10vh 0;
+    }
+}
+
+.project {
+    // background: tomato;
+    border-radius: 10px;
+    overflow: hidden;
+    border: rgb(136, 70, 211) 10px solid;
 }

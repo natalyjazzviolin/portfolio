@@ -8,7 +8,9 @@ export default function Projects() {
         When I have time to code outside my full-time job, I like to work on
         music-related projects. Here are some of the latest:
       </p>
-      <Project />
+      <div className="projects__list">
+        <Project />
+      </div>
     </div>
   );
 }

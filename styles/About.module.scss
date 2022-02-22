@@ -23,6 +23,8 @@
     }
     &__bio {
         padding: 5vh 8vw;
+
+        // TODO: make this font config reusable
         font-size: 1.5em;
         line-height: 1.7;
         letter-spacing: .5px;

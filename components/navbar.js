@@ -12,19 +12,6 @@ const Navbar = () => {
     { title: 'Blog', to: '/blog'},
   ]
     const [open, setOpen] = useState(false);
-    const ref = useRef(null);
-
-    // useEffect(() => {
-    //    const closeOpenMenus = (e) => {
-    //      if (
-    //        ref.current &&
-    //        !ref.current.contains(e.target)
-    //      ) {
-    //        setOpen(false);
-    //      }
-    //    };
-    //    document.addEventListener("mousedown", closeOpenMenus);
-    // })
 
     const LeftCrossvariants = {
       open: {
@@ -65,7 +52,6 @@ const Navbar = () => {
           aria-controls="nav"
           // tabIndex={-1}
           aria-label="Open menu"
-          ref={ref}
           onClick={() => {
             document.body.offsetHeight;
             setOpen(!open);

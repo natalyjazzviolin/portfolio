@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+.projects {
+    min-height: 70vh;
+    padding: 10vh 10vw 0 10vw;
+    &__title {
+        font-family: 'Ubuntu', sans-serif;
+        line-height: 2em;
+    }
+}

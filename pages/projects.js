@@ -1,4 +1,4 @@
-import "../styles/projects.module.scss"
+import "../styles/Projects.module.scss"
 import Project from "../components/project";
 
 export default function Projects() {
@@ -17,9 +17,6 @@ export default function Projects() {
           </a>
         </span>
       </p>
-      {/* <div className="projects__list">
-        <Project />
-      </div> */}
     </div>
   );
 }

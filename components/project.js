@@ -5,15 +5,6 @@ import django from "../public/django.png"
 export default function Project() {
   return (
     <div className="project">
-      <div className="project__image">
-        <Image
-          src={django}
-          alt="Djangodjams screenshot"
-          width={300}
-          height={300}
-          layout="fixed"
-        />
-      </div>
       <div className="project__description">
         <div className="project__description-tags">
           #Gatsby #React

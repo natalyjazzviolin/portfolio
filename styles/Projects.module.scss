@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Comfortaa:wght@500&family=Quicksand&display=swap');
 
 .projects {
-    min-height: 70vh;
+    min-height: 60vh;
     padding: 10vh 10vw 0 10vw;
+    text-align: center;
+    display: grid;
+    justify-items: center;
     &__title {
         font-family: 'Ubuntu', sans-serif;
         font-size: 1.5em;
@@ -16,21 +19,46 @@
     }
 }
 
+.title {
+    font-family: 'Comfortaa', cursive;
+    background-color: bisque;
+    width: fit-content;
+    margin-bottom: 10px;
+    font-size: 2em;
+    text-align: center;
+    &::after {
+        content: "";
+        top: 2px;
+        z-index: 5;
+        background-color: tomato;
+        height: 10vh;
+        width: 20vw;
+    }
+}
+
 .project {
     display: grid;
     justify-items: center;
+    align-items: center;
     border-radius: 10px;
     overflow: hidden;
-    // border: rgb(136, 70, 211) 10px solid;
-    box-shadow: 0 0 0 13px rgb(136, 70, 211);
+    box-shadow: 0 0 0 7px rgb(136, 70, 211);
     border-radius: 10px;
+    height: 200px;
+}
 
-    &__image {
-        background-color: black;
-        width: 100%;
+@media (min-width: 600px) {
+    .projects {
+        &__title {
+            width: 70vw;
+        }
     }
+}
 
-    &__description {
-        height: 300px;
+@media (min-width: 1000px) {
+    .projects {
+        &__title {
+            width: 50vw;
+        }
     }
 }

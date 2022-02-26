@@ -6,11 +6,20 @@ export default function Projects() {
     <div className="projects">
       <p className="projects__title">
         When I have time to code outside my full-time job, I like to work on
-        music-related projects. Here are some of the latest:
+        music-related projects. <br></br>Check them out on{" "}
+        <span className="highlight">
+          <a
+            target="_blank"
+            href="https://github.com/natalyjazzviolin"
+            rel="noreferrer"
+          >
+            GitHub.
+          </a>
+        </span>
       </p>
-      <div className="projects__list">
+      {/* <div className="projects__list">
         <Project />
-      </div>
+      </div> */}
     </div>
   );
 }

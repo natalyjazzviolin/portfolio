@@ -2,5 +2,6 @@
 title: 'Docker DNS Error'
 date: '2022-02-26'
 tags: docker, laravel
-long: false
+blog: false
 ---
+data over here

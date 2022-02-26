@@ -1,18 +1,13 @@
 import "../styles/Notes.module.scss"
 import fs from "fs";
 import matter from "gray-matter";
-import { join } from "path";
-import { ParsedUrlQuery } from "querystring";
-import { getParsedFileContentBySlug, renderMarkdown} from "../utils/markdown";
+import md from "markdown-it";
 
 // const NOTES_PATH = join(process.cwd(), "_articles");
 
 export default function Notes({ notes }) {
   return (
     <div className="notes">
-      { notes.map(note => {
-        return <h1 key={note.frontmatter.title}>{note.frontmatter.title}</h1>;
-      })}
       <p className="notes__title">
         When I have time to code outside my full-time job, I like to work on
         music-related projects. <br></br>Check them out on{" "}
@@ -26,6 +21,14 @@ export default function Notes({ notes }) {
           </a>
         </span>
       </p>
+      {notes.map((note) => {
+        return (
+          <div key={note.frontmatter.title} className="note">
+            <h3>{note.frontmatter.title}</h3>
+            <p>{ note.content}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -49,11 +52,12 @@ export const getStaticProps = async ({
     //   },
     // };
     const readFile = fs.readFileSync(`notes/${fileName}`, "utf-8");
-    const { data: frontmatter } = matter(readFile);
+    const { data: frontmatter, content } = matter(readFile);
 
     return {
       slug,
       frontmatter,
+      content
     };
   });
   // const noteMarkdownContent = getParsedFileContentBySlug(params.slug, slug);

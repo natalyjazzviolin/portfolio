@@ -1,24 +1,14 @@
 import "../styles/Notes.module.scss"
 import fs from "fs";
 import matter from "gray-matter";
-import md from "markdown-it";
 import { useState, useEffect } from "react";
 import markdownToHtml from "../utils/markdownToHTML";
-// const NOTES_PATH = join(process.cwd(), "_articles");
+import { format, formatDistance, formatRelative, subDays, parseISO } from "date-fns";
 
 export default function Notes({ notes }) {
 
   const [content, setContent] = useState();
 
-  useEffect(() => {
-    notes.map(note => {
-       const parseMarkdown = async () => {
-         setContent(await markdownToHtml(note.content));
-         console.log(content);
-       };
-       parseMarkdown();
-    })
-  })
   return (
     <div className="notes">
       <p className="notes__title">
@@ -37,12 +27,14 @@ export default function Notes({ notes }) {
       {notes.map((note) => {
         const parseMarkdown = async () => {
           setContent(await markdownToHtml(note.content));
-          console.log(content);
         };
         parseMarkdown();
         return (
           <div key={note.frontmatter.title} className="note">
-            <h3>{note.frontmatter.title}</h3>
+            <div className="note__header">
+              <h3>{note.frontmatter.title}</h3>
+              <span>{ format(parseISO(note.frontmatter.date), "dd MMM yyyy") }</span>
+            </div>
             <p dangerouslySetInnerHTML={{ __html: `${content}` }} />
           </div>
         );
@@ -62,7 +54,6 @@ export const getStaticProps = async ({
 
     const readFile = fs.readFileSync(`notes/${fileName}`, "utf-8");
     const { data: frontmatter, content } = matter(readFile);
-    console.log(content)
 
     return {
       slug,

@@ -8,6 +8,15 @@ import { format, formatDistance, formatRelative, subDays, parseISO } from "date-
 export default function Notes({ notes }) {
 
   const [content, setContent] = useState();
+  const [tags, setTags] = useState([]);
+
+  useEffect(() => {
+    notes.map(note => {
+      setTags(note.frontmatter.tags.split(", "));
+    })
+  })
+
+  // TODO: make hr divider component
 
   return (
     <div className="notes">
@@ -40,6 +49,13 @@ export default function Notes({ notes }) {
                 <span>
                   {format(parseISO(note.frontmatter.date), "dd MMM yyyy")}
                 </span>
+              </div>
+              <div className="note__tags">
+                {/* { tags.map(tag => {
+                  return (
+                    <span key={tag}>{ tag }</span>
+                  )
+                })} */}
               </div>
               <p dangerouslySetInnerHTML={{ __html: `${content}` }} />
             </div>

@@ -5,16 +5,12 @@ import { useState, useEffect } from "react";
 import markdownToHtml from "../utils/markdownToHTML";
 import { format, formatDistance, formatRelative, subDays, parseISO } from "date-fns";
 
+import Tag from "../components/note/Tag"
+
 export default function Notes({ notes }) {
 
   const [content, setContent] = useState();
   const [tags, setTags] = useState([]);
-
-  useEffect(() => {
-    notes.map(note => {
-      setTags(note.frontmatter.tags.split(", "));
-    })
-  })
 
   // TODO: make hr divider component
 
@@ -51,11 +47,12 @@ export default function Notes({ notes }) {
                 </span>
               </div>
               <div className="note__tags">
-                {/* { tags.map(tag => {
+                { note.frontmatter.tags.split(", ").map(tag => {
+
                   return (
-                    <span key={tag}>{ tag }</span>
+                    <Tag key={tag} text={tag} />
                   )
-                })} */}
+                })}
               </div>
               <p dangerouslySetInnerHTML={{ __html: `${content}` }} />
             </div>

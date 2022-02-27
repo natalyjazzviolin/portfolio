@@ -24,9 +24,15 @@
 }
 
 .note {
+    text-align: left;
     &__header {
         display: grid;
         grid-auto-flow: column;
+    }
+    &__tags {
+        display: grid;
+        grid-auto-flow: column;
+        width: min-content;
     }
 }
 

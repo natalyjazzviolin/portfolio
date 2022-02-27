@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/notes.js"  ],
+, "pages/notes.js", "utils/markdown/markdownToHTML.js"  ],
   "exclude": [
     "node_modules"
   ]

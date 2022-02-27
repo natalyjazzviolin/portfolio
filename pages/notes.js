@@ -2,10 +2,23 @@ import "../styles/Notes.module.scss"
 import fs from "fs";
 import matter from "gray-matter";
 import md from "markdown-it";
-
+import { useState, useEffect } from "react";
+import markdownToHtml from "../utils/markdownToHTML";
 // const NOTES_PATH = join(process.cwd(), "_articles");
 
 export default function Notes({ notes }) {
+
+  const [content, setContent] = useState();
+
+  useEffect(() => {
+    notes.map(note => {
+       const parseMarkdown = async () => {
+         setContent(await markdownToHtml(note.content));
+         console.log(content);
+       };
+       parseMarkdown();
+    })
+  })
   return (
     <div className="notes">
       <p className="notes__title">
@@ -22,10 +35,15 @@ export default function Notes({ notes }) {
         </span>
       </p>
       {notes.map((note) => {
+        const parseMarkdown = async () => {
+          setContent(await markdownToHtml(note.content));
+          console.log(content);
+        };
+        parseMarkdown();
         return (
           <div key={note.frontmatter.title} className="note">
             <h3>{note.frontmatter.title}</h3>
-            <p>{ note.content}</p>
+            <p dangerouslySetInnerHTML={{ __html: `${content}` }} />
           </div>
         );
       })}
@@ -41,18 +59,10 @@ export const getStaticProps = async ({
 
   const notes = files.map((fileName) => {
     const slug = fileName.replace(".md", "");
-    // const noteMarkdownContent = getParsedFileContentBySlug(params.slug, fileName);
 
-    // const renderHTML = renderMarkdown(noteMarkdownContent);
-
-    // return {
-    //   props: {
-    //     notes,
-    //     frontMatter: noteMarkdownContent.frontMatter,
-    //   },
-    // };
     const readFile = fs.readFileSync(`notes/${fileName}`, "utf-8");
     const { data: frontmatter, content } = matter(readFile);
+    console.log(content)
 
     return {
       slug,
@@ -60,9 +70,6 @@ export const getStaticProps = async ({
       content
     };
   });
-  // const noteMarkdownContent = getParsedFileContentBySlug(params.slug, slug);
-
-  // const renderHTML = renderMarkdown(noteMarkdownContent);
 
   return {
     props: {

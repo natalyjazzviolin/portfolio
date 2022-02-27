@@ -17,17 +17,7 @@ export default function Notes({ notes }) {
   return (
     <div className="notes">
       <p className="notes__title">
-        When I have time to code outside my full-time job, I like to work on
-        music-related projects. <br></br>Check them out on{" "}
-        <span className="highlight">
-          <a
-            target="_blank"
-            href="https://github.com/natalyjazzviolin"
-            rel="noreferrer"
-          >
-            GitHub.
-          </a>
-        </span>
+       Taking notes is a great way to learn, so I try to do it whenever I manage to solve a problem! Here are some that I have encountered:
       </p>
       <div className="divider">
         <hr />
@@ -54,7 +44,7 @@ export default function Notes({ notes }) {
                   )
                 })}
               </div>
-              <p dangerouslySetInnerHTML={{ __html: `${content}` }} />
+              <p className="note__body" dangerouslySetInnerHTML={{ __html: `${content}` }} />
             </div>
             <div className="divider">
               <hr />

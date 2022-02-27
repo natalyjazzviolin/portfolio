@@ -2,8 +2,7 @@
 
 .notes {
     min-height: 60vh;
-    padding: 10vh 10vw 0 10vw;
-    text-align: center;
+    padding: 5vh 10vw;
     display: grid;
     justify-items: center;
     &__title {
@@ -11,6 +10,7 @@
         font-size: 1.5em;
         line-height: 1.7;
         letter-spacing: .5px;
+        padding-bottom: 5vh;
     }
     &__list {
         display: grid;
@@ -24,7 +24,9 @@
 }
 
 .note {
-    text-align: left;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 5vh 0;
+
     &__header {
         display: grid;
         grid-auto-flow: column;
@@ -33,6 +35,12 @@
         display: grid;
         grid-auto-flow: column;
         width: min-content;
+        padding: 2vh 0 1vh 0;
+    }
+    &__body {
+       > code {
+            background-color: tomato
+       }
     }
 }
 

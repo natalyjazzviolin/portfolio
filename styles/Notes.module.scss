@@ -19,6 +19,17 @@
     }
 }
 
+.divider > hr {
+    width: 80vw;
+}
+
+.note {
+    &__header {
+        display: grid;
+        grid-auto-flow: column;
+    }
+}
+
 .title {
     font-family: 'Comfortaa', cursive;
     background-color: bisque;
@@ -34,17 +45,6 @@
         height: 10vh;
         width: 20vw;
     }
-}
-
-.project {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 0 7px rgb(136, 70, 211);
-    border-radius: 10px;
-    height: 200px;
 }
 
 @media (min-width: 600px) {

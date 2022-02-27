@@ -24,19 +24,29 @@ export default function Notes({ notes }) {
           </a>
         </span>
       </p>
+      <div className="divider">
+        <hr />
+      </div>
       {notes.map((note) => {
         const parseMarkdown = async () => {
           setContent(await markdownToHtml(note.content));
         };
         parseMarkdown();
         return (
-          <div key={note.frontmatter.title} className="note">
-            <div className="note__header">
-              <h3>{note.frontmatter.title}</h3>
-              <span>{ format(parseISO(note.frontmatter.date), "dd MMM yyyy") }</span>
+          <>
+            <div key={note.frontmatter.title} className="note">
+              <div className="note__header">
+                <h3>{note.frontmatter.title}</h3>
+                <span>
+                  {format(parseISO(note.frontmatter.date), "dd MMM yyyy")}
+                </span>
+              </div>
+              <p dangerouslySetInnerHTML={{ __html: `${content}` }} />
             </div>
-            <p dangerouslySetInnerHTML={{ __html: `${content}` }} />
-          </div>
+            <div className="divider">
+              <hr />
+            </div>
+          </>
         );
       })}
     </div>

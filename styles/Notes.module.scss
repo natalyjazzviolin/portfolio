@@ -30,6 +30,7 @@
     &__header {
         display: grid;
         grid-auto-flow: column;
+        justify-content: space-between;
     }
     &__tags {
         display: grid;

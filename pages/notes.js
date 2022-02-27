@@ -15,7 +15,6 @@ export default function Notes({ notes }) {
   useEffect(() => {
     notes.map(note => {
       let tempTags = note.frontmatter.tags.split(", ");
-      // console.log(tempTags)
       tempTags.map(tag => {
         setTags((tags) => [...tags, tag]);
       })
@@ -32,7 +31,7 @@ export default function Notes({ notes }) {
   return (
     <div className="notes">
       <p className="notes__title">
-       Taking notes is a great way to learn, so I try to do it whenever I manage to solve a problem! Here are some that I have encountered:
+       Taking notes is a great way to learn, so I try to do it whenever I manage to solve a problem! Below are some that I have encountered.
       </p>
       <div className="divider">
         <hr />

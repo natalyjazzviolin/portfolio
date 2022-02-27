@@ -13,6 +13,8 @@
     gap: 5vh;
 
     &__versions {
+        display: grid;
+        grid-auto-flow: row;
         a {
             color: rgb(250, 240, 198);
             text-decoration: underline;

@@ -2,13 +2,15 @@ import '../styles/Footer.module.scss';
 
 export default function Footer() {
 
+  //TODO: sort version by date
     const versions = [
-      { date: "November 2020", no: 1, url: "https://www.v1.nataly.dev/" },
+      { date: "NextJS, Feb '22", no: 1, url: "https://www.v1.nataly.dev/" },
+      { date: "GatsbyJS, Nov '20", no: 1, url: "https://www.v1.nataly.dev/" },
     ];
     return (
       <footer className="footer">
         <div className="footer__versions">
-          <p>Previous Versions:</p>
+          <p>Versions:</p>
           {versions.map((version) => {
             return <a key={version.no} href={version.url} target="_blank" rel="noreferrer">{version.date}</a>;
           })}

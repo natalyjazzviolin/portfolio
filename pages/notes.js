@@ -12,6 +12,21 @@ export default function Notes({ notes }) {
   const [content, setContent] = useState();
   const [tags, setTags] = useState([]);
 
+  useEffect(() => {
+    notes.map(note => {
+      let tempTags = note.frontmatter.tags.split(", ");
+      // console.log(tempTags)
+      tempTags.map(tag => {
+        setTags((tags) => [...tags, tag]);
+      })
+    })
+  
+    return () => {
+      setTags([])
+    }
+  }, [])
+  
+  console.log(`Tags`, tags)
   // TODO: make hr divider component
 
   return (
@@ -38,7 +53,6 @@ export default function Notes({ notes }) {
               </div>
               <div className="note__tags">
                 { note.frontmatter.tags.split(", ").map(tag => {
-
                   return (
                     <Tag key={tag} text={tag} />
                   )

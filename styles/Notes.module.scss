@@ -32,13 +32,14 @@
         display: grid;
         grid-auto-flow: column;
         justify-content: space-between;
+        line-height: 20px;
     }
     &__tags {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         width: min-content;
-        padding: 2vh 0 1vh 0;
+        padding: 1vh 0 1vh 0;
         //Figure out alternate row styling
         // > *:nth-child(2n + 1) {
         //     margin-left: 5vw;

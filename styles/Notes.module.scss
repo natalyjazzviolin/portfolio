@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Comfortaa:wght@500&family=Quicksand&display=swap');
+@use 'colors';
+@use 'fonts';
 
 .notes {
     min-height: 60vh;
@@ -6,7 +7,7 @@
     display: grid;
     justify-items: center;
     &__title {
-        font-family: 'Ubuntu', sans-serif;
+        font-family: fonts.$ubuntu;
         font-size: 1.5em;
         line-height: 1.7;
         letter-spacing: .5px;
@@ -24,7 +25,7 @@
 }
 
 .note {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: fonts.$ubuntu;
     padding: 5vh 0;
 
     &__header {
@@ -47,23 +48,6 @@
        > code {
             background-color: tomato
        }
-    }
-}
-
-.title {
-    font-family: 'Comfortaa', cursive;
-    background-color: bisque;
-    width: fit-content;
-    margin-bottom: 10px;
-    font-size: 2em;
-    text-align: center;
-    &::after {
-        content: "";
-        top: 2px;
-        z-index: 5;
-        background-color: tomato;
-        height: 10vh;
-        width: 20vw;
     }
 }
 

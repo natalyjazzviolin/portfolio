@@ -35,7 +35,7 @@
 
 .highlight {
     white-space: nowrap;
-    background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #FFD0AE 50%);
+    background: linear-gradient(180deg,rgba(255,255,255,0) 50%, colors.$highlight 50%);
     > a {
         text-decoration: none;
         color: black;

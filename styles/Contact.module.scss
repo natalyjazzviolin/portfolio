@@ -1,38 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Quicksand&display=swap');
+@use 'colors';
+@use 'fonts';
 
 .container {
     &__title {
-        font-family: 'Ubuntu', sans-serif;
+        font-family: fonts.$ubuntu;
         font-size: 2.5em;
         padding-top: 5vh;
         padding-left: 4vh;
         margin-bottom: -8vh;
-        color: rgb(162, 76, 76);
+        color: colors.$dark-red;
         text-transform: uppercase;
     }
     &__contact {
         height: 100%;
         padding-bottom: 10vh;
-        background: rgb(223, 89, 89);
+        background: colors.$red;
         clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
-        background-image: radial-gradient(rgb(209, 87, 87) 20%, transparent 20%),
+        background-image: radial-gradient(colors.$red 20%, transparent 20%),
      radial-gradient(#fafafa 20%, transparent 20%);
         background-position: 0 0, 50px 50px;
         background-size: 10px 10px;
-        color: rgb(250, 240, 198);
+        color: colors.$primary;
             text-align: center;
         > h3 {
             padding-top: 10vh;
             font-size: 2em;
-            font-family: 'Quicksand', sans-serif;
+            font-family: fonts.$quicksand;
             text-transform: uppercase;
         }
         > p {
-            font-family: 'Comfortaa', cursive;
+            font-family: fonts.$comfortaa;
             padding: 5vh;
             font-size: 1.5em;
             > a {
-                color: rgb(250, 240, 198);
+                color: colors.$primary;
             }
         }
 
@@ -43,7 +44,7 @@
             grid-gap: 10vw;
             z-index: 3;
             > a {
-                color: rgb(250, 240, 198);
+                color: colors.$primary;
                 font-size: 2em;
             }
         }

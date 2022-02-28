@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Quicksand&display=swap');
+@use 'colors';
+@use 'fonts';
 
 .menu {
     width: 100vw;
@@ -22,17 +23,17 @@
         height: 100vh;
         clip-path: circle(396px at 301px 4px);
         animation: fadeIn 300ms;
-        background-color: rgb(153, 237, 237);
+        background-color: colors.$nav;
         backdrop-filter: blur(50%);
         text-align: center;
-        font-family: 'Quicksand', sans-serif;
+        font-family: fonts.$quicksand;
         text-transform: uppercase;
         > li {
             height: 10vh;
             > a {
                 text-decoration: none;
                 font-size: 1.7em;
-                color: rgb(34, 9, 108);
+                color: colors.$nav-links;
             }
         }
         &-hidden {
@@ -42,10 +43,10 @@
     &__logo {
         > a {
             text-decoration: none;
-            font-family: 'Comfortaa', cursive;
+            font-family: fonts.$comfortaa;
             font-size: 1.5em;
             padding-left: 5vw;
-            color: rgb(2, 84, 78);
+            color: colors.$logo;
         }
     }
     &__toggle {
@@ -78,14 +79,13 @@
                 > li {
                     width: min-content;
                     list-style: none;
-                    font-family: 'Quicksand', sans-serif;
+                    font-family: fonts.$quicksand;
                     text-transform: uppercase;
                     text-align: center;
                     > a {
                         text-decoration: none;
-                        color: rgb(34, 9, 108);
+                        color: colors.$nav-links;
                         font-weight: 600;
-                        // font-size: 2em;
                     }
                 }
             }
@@ -95,17 +95,13 @@
 
 @media (min-width: 900px) {
     .menu{
-        // grid-template-columns: 60vw 40vw;
         &__logo {
             font-size: 2em;
-            // padding-left: 10vw;
         }
         &__list{
             &-hidden{
-                // padding-right: 10vw;
                 > li {
                     > a {
-                        // font-weight: 600;
                         font-size: 1.5em;
                     }
                 }

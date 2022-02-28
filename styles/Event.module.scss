@@ -1,14 +1,15 @@
+@use 'colors';
+@use 'fonts';
 
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Quicksand&display=swap');
 .event {
     display: grid;
-    background-color: rgb(250, 240, 198);
+    background-color: colors.$primary;
     color: tomato;
     margin: 2vh 5vw;
     font-size: 1.2em;
     border-radius: 10px;
     height: 70px;
-    font-family: 'Comfortaa', cursive;
+    font-family: fonts.$comfortaa;
     align-items: center;
     &__tag {
         position: absolute;

@@ -9,6 +9,13 @@ import Tag from "../components/note/Tag"
 
 export default function Notes({ notes }) {
 
+  const colors = [
+    "rgb(34, 9, 108)",
+    "rgb(6, 91, 65)",
+    "rgb(91, 6, 81)",
+    "rgb(162, 76, 76)",
+  ];
+
   const [content, setContent] = useState();
   const [tags, setTags] = useState([]);
 
@@ -52,9 +59,17 @@ export default function Notes({ notes }) {
               </div>
               <div className="note__tags">
                 { note.frontmatter.tags.split(", ").map(tag => {
+
+                  let randomColor =
+                    colors[Math.floor(Math.random() * colors.length)];
+
                   return (
-                    <Tag key={tag} text={tag} />
-                  )
+                    <Tag
+                      key={tag}
+                      text={tag}
+                      color={randomColor}
+                    />
+                  );
                 })}
               </div>
               <p className="note__body" dangerouslySetInnerHTML={{ __html: `${content}` }} />

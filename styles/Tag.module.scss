@@ -1,3 +1,4 @@
+@use 'colors';
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Quicksand&family=Roboto:wght@400');
 
 .tag {
@@ -6,6 +7,6 @@
     margin-right: 10px;
     font-family: 'Roboto', sans-serif;
     border-radius: 5px;
-    color: rgb(250, 240, 198);
+    color: colors.$primary;
     width: min-content;
 }

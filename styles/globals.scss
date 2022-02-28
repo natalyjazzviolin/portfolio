@@ -1,3 +1,4 @@
+@use 'colors';
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -20,7 +21,7 @@ html, body {
   width: 100vw;
   margin: 0;
   overflow-x: none;
-  background-color: rgb(250, 240, 198);
+  background-color: colors.$primary;
   overflow-y: scroll;
 }
 

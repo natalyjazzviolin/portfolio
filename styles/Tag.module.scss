@@ -1,11 +1,13 @@
 @use 'colors';
+@use 'fonts';
+
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Quicksand&family=Roboto:wght@400');
 
 .tag {
     padding: 3px 5px;
     background-color: tomato;
     margin-right: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: fonts.$roboto;
     border-radius: 5px;
     color: colors.$primary;
     width: min-content;

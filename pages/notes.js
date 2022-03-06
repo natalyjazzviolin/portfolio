@@ -10,11 +10,11 @@ import Tag from "../components/note/Tag"
 
 export default function Notes({ notes }) {
 
-  const colors = [
-    "rgb(34, 9, 108)",
-    "rgb(136, 70, 211)",
-    // "rgb(223, 89, 89)",
-  ];
+  // const colors = [
+  //   "rgb(34, 9, 108)",
+  //   "rgb(136, 70, 211)",
+  //   // "rgb(223, 89, 89)",
+  // ];
 
   const [content, setContent] = useState();
   const [tags, setTags] = useState([]);

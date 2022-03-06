@@ -2,6 +2,7 @@ import "../styles/Notes.module.scss"
 import fs from "fs";
 import matter from "gray-matter";
 import { useState, useEffect } from "react";
+import NoteBlock from "../components/noteBlock"
 import markdownToHtml from "../utils/markdownToHTML";
 import { format, formatDistance, formatRelative, subDays, parseISO } from "date-fns";
 
@@ -37,48 +38,13 @@ export default function Notes({ notes }) {
   return (
     <div className="notes">
       <p className="notes__title">
-       Taking notes is a great way to learn, so I try to do it whenever I manage to solve a problem! Below are some that I have encountered.
+        Taking notes is a great way to learn, so I try to do it whenever I
+        manage to solve a problem! Below are some that I have encountered.
       </p>
       <div className="divider">
         <hr />
       </div>
-      {notes.map((note) => {
-        const parseMarkdown = async () => {
-          setContent(await markdownToHtml(note.content));
-        };
-        parseMarkdown();
-        return (
-          <>
-            <div key={note.frontmatter.title} className="note">
-              <div className="note__header">
-                <h3>{note.frontmatter.title}</h3>
-                <span>
-                  {format(parseISO(note.frontmatter.date), "dd MMM yyyy")}
-                </span>
-              </div>
-              <div className="note__tags">
-                { note.frontmatter.tags.split(", ").map(tag => {
-                  
-                  let randomColor =
-                    colors[Math.floor(Math.random() * colors.length)];
-
-                  return (
-                    <Tag
-                      key={tag}
-                      text={tag}
-                      color={randomColor}
-                    />
-                  );
-                })}
-              </div>
-              <p className="note__body" dangerouslySetInnerHTML={{ __html: `${content}` }} />
-            </div>
-            <div className="divider">
-              <hr />
-            </div>
-          </>
-        );
-      })}
+      <NoteBlock notes={notes} />
     </div>
   );
 }

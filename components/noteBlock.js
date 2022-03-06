@@ -4,7 +4,7 @@ import Tag from "../components/note/Tag";
 
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { materialDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { nord } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import remarkGfm from "remark-gfm";
 
 export default function NoteBlock({ notes }) {
@@ -38,7 +38,6 @@ export default function NoteBlock({ notes }) {
                 })}
               </div>
               <div className="note__body">
-                {/* <ReactMarkdown>{note.content}</ReactMarkdown> */}
                 <ReactMarkdown
                   className="preview-markdown"
                   children={note.content}
@@ -49,7 +48,7 @@ export default function NoteBlock({ notes }) {
                       return !inline && match ? (
                         <SyntaxHighlighter
                           children={String(children).replace(/\n$/, "")}
-                          style={materialDark}
+                          style={nord}
                           language={match[1]}
                           PreTag="div"
                           // {...props}

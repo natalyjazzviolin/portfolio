@@ -1,0 +1,64 @@
+@use 'colors';
+@use 'fonts';
+
+.divider > hr {
+    width: 80vw;
+}
+
+.note {
+    font-family: fonts.$ubuntu;
+    padding: 5vh 0;
+    justify-self: center;
+
+    &__header {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        line-height: 20px;
+    }
+    &__tags {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        width: min-content;
+        padding: 1vh 0 1vh 0;
+        //Figure out alternate row styling
+        // > *:nth-child(2n + 1) {
+        //     margin-left: 5vw;
+        // }
+    }
+    &__body {
+       > code {
+            background-color: tomato
+       }
+    }
+}
+
+@media (min-width: 600px) {
+    .wrapper {
+        width: 60vw;
+    }
+    .note {
+
+        &__header {
+            // font-size: 1.5em;
+            padding-bottom: 2vh;
+        }
+        &__tags {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    .wrapper {
+        width: 40vw;
+    }
+    .note {
+        // width: 50vw;
+        // max-width: 50vw;
+        &__title {
+            width: 40vw;
+        }
+    }
+}

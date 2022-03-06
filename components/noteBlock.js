@@ -1,11 +1,16 @@
 /* eslint-disable react/no-children-prop */
 import { format, formatDistance, formatRelative, subDays, parseISO } from "date-fns";
 import Tag from "../components/note/Tag";
+import "../styles/NoteBlock.module.scss"
 
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nord } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import remarkGfm from "remark-gfm";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+
+
+//TODO: add copyToClipboard button to code blocks
 
 export default function NoteBlock({ notes }) {
 
@@ -17,7 +22,7 @@ export default function NoteBlock({ notes }) {
 
   console.log(notes)
   return (
-    <div>
+    <div className="wrapper">
       { notes.map( note => {
         console.log(note)
         return (
@@ -63,44 +68,9 @@ export default function NoteBlock({ notes }) {
                 />
               </div>
             </div>
-            <div className="divider">
-              <hr />
-            </div>
           </>
         );
       })}
     </div>
   );
 }
-
-// {
-//   notes.map((note) => {
-//     const parseMarkdown = async () => {
-//       setContent(await markdownToHtml(note.content));
-//     };
-//     parseMarkdown();
-//     return (
-//       <>
-//         <div key={note.frontmatter.title} className="note">
-//           <div className="note__header">
-//             <h3>{note.frontmatter.title}</h3>
-//             <span>
-//               {format(parseISO(note.frontmatter.date), "dd MMM yyyy")}
-//             </span>
-//           </div>
-//           <div className="note__tags">
-//             {note.frontmatter.tags.split(", ").map((tag) => {
-//               let randomColor =
-//                 colors[Math.floor(Math.random() * colors.length)];
-
-//               return <Tag key={tag} text={tag} color={randomColor} />;
-//             })}
-//           </div>
-//         </div>
-//         <div className="divider">
-//           <hr />
-//         </div>
-//       </>
-//     );
-//   });
-// }

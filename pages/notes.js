@@ -4,9 +4,8 @@ import matter from "gray-matter";
 import { useState, useEffect } from "react";
 import NoteBlock from "../components/noteBlock"
 import markdownToHtml from "../utils/markdownToHTML";
-import { format, formatDistance, formatRelative, subDays, parseISO } from "date-fns";
 
-import Tag from "../components/note/Tag"
+
 
 export default function Notes({ notes }) {
 
@@ -41,10 +40,9 @@ export default function Notes({ notes }) {
         Taking notes is a great way to learn, so I try to do it whenever I
         manage to solve a problem! Below are some that I have encountered.
       </p>
-      <div className="divider">
-        <hr />
+      <div className="notes__list">
+        <NoteBlock notes={notes} />
       </div>
-      <NoteBlock notes={notes} />
     </div>
   );
 }

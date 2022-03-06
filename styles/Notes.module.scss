@@ -20,50 +20,22 @@
     }
 }
 
-.divider > hr {
-    width: 80vw;
-}
 
-.note {
-    font-family: fonts.$ubuntu;
-    padding: 5vh 0;
-
-    &__header {
-        display: grid;
-        grid-auto-flow: column;
-        justify-content: space-between;
-        line-height: 20px;
-    }
-    &__tags {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        width: min-content;
-        padding: 1vh 0 1vh 0;
-        //Figure out alternate row styling
-        // > *:nth-child(2n + 1) {
-        //     margin-left: 5vw;
-        // }
-    }
-    &__body {
-       > code {
-            background-color: tomato
-       }
-    }
-}
 
 @media (min-width: 600px) {
-    .projects {
+    .notes {
         &__title {
-            width: 70vw;
+            width: 60vw;
+            padding: 8vh 0;
         }
     }
 }
 
 @media (min-width: 1000px) {
-    .projects {
+    .notes {
         &__title {
             width: 50vw;
+            padding: 10vh 0;
         }
     }
 }

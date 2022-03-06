@@ -5,7 +5,7 @@ import Tag from "../components/note/Tag";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-
+import remarkGfm from "remark-gfm";
 
 export default function NoteBlock({ notes }) {
 
@@ -40,22 +40,28 @@ export default function NoteBlock({ notes }) {
               <div className="note__body">
                 {/* <ReactMarkdown>{note.content}</ReactMarkdown> */}
                 <ReactMarkdown
+                  className="preview-markdown"
+                  children={note.content}
+                  remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
                   components={{
-                    code({ className, children }) {
-                        // Removing "language-" because React-Markdown already added "language-"
-                        // const language = className.replace("language-", "");
-                        return (
-                            <SyntaxHighlighter
-                                style={materialDark}
-                                // language={language}
-                                children={children[0]}
-                            />
-                        );
+                    code({ node, inline, className, children, ...props }) {
+                      const match = /language-(\w+)/.exec(className || "");
+                      return !inline && match ? (
+                        <SyntaxHighlighter
+                          children={String(children).replace(/\n$/, "")}
+                          style={materialDark}
+                          language={match[1]}
+                          PreTag="div"
+                          // {...props}
+                        />
+                      ) : (
+                        <code className={className} {...props}>
+                          {children}
+                        </code>
+                      );
                     },
-                }}
-                >
-                  { note.content }
-                </ReactMarkdown>
+                  }}
+                />
               </div>
             </div>
             <div className="divider">

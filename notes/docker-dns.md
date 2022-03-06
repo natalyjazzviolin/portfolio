@@ -8,3 +8,7 @@ I ran into an issue when running Docker on Mac, and got this error: `DNS_PROBE_F
 ```shell
 rm -rf node_modules
 ```
+
+```js
+let code = 'code'
+```

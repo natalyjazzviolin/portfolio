@@ -16,7 +16,11 @@ export default function Notes({ notes }) {
     if (found === false) {
       return
     } else if (filteredNotes.length === 0 && found === true) {
-      return <p>No notes found!</p>
+      return (
+        <p className="no_notes">
+          No notes found! <br></br>Please try searching again 🔎
+        </p>
+      );
     }else if (filteredNotes.length > 0 && found === true) {
       return <p>{`Found ${filteredNotes.length} notes:`}</p>;
     }

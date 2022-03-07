@@ -1,22 +1,46 @@
 import "../styles/Notes.module.scss"
 import fs from "fs";
 import matter from "gray-matter";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import NoteBlock from "../components/noteBlock"
-import markdownToHtml from "../utils/markdownToHTML";
-
-
+import {NotesProvider} from "../utils/noteContext"
 
 export default function Notes({ notes }) {
 
-  // const colors = [
-  //   "rgb(34, 9, 108)",
-  //   "rgb(136, 70, 211)",
-  //   // "rgb(223, 89, 89)",
-  // ];
-
-  const [content, setContent] = useState();
+  const [search, setSearch] = useState('');
   const [tags, setTags] = useState([]);
+  const [filteredNotes, setFilteredNotes] = useState(notes);
+  const [found, setFound] = useState(false);
+
+  const filter = () => {
+    if (found === false) {
+      return
+    } else if (filteredNotes.length === 0 && found === true) {
+      return <p>No notes found!</p>
+    }else if (filteredNotes.length > 0 && found === true) {
+      return <p>{`Found ${filteredNotes.length} notes:`}</p>;
+    }
+  }
+
+  const searchNotes = (searchValue) => {
+    if (searchValue.length > 3) {
+      setSearch(searchValue);
+      // console.log(searchValue);
+      const filteredData = notes.filter((note) => {
+        return Object.values(note)
+          .join("")
+          .toLowerCase()
+          .includes(search.toLowerCase());
+      });
+      console.log(filteredData.length);
+      setFilteredNotes(filteredData);
+      setFound(true);
+    } else {
+      setFilteredNotes(notes);
+      setFound(false);
+    }
+    
+  }
 
   useEffect(() => {
     notes.map(note => {
@@ -31,7 +55,7 @@ export default function Notes({ notes }) {
     }
   }, [])
   
-  console.log(`Tags`, tags)
+  // console.log(`Tags`, tags)
   // TODO: make hr divider component
 
   return (
@@ -40,9 +64,19 @@ export default function Notes({ notes }) {
         Taking notes is a great way to learn, so I try to do it whenever I
         manage to solve a problem! Below are some that I have encountered.
       </p>
-      <div className="notes__list">
-        <NoteBlock notes={notes} />
-      </div>
+      <NotesProvider>
+        <div className="notes__search">
+          <input
+            onChange={(e) => {
+              searchNotes(e.target.value);
+            }}
+          /> 
+          { filter() }
+        </div>
+        <div className="notes__list">
+          <NoteBlock notes={filteredNotes} />
+        </div>
+      </NotesProvider>
     </div>
   );
 }

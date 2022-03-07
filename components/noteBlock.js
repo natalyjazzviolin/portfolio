@@ -20,11 +20,11 @@ export default function NoteBlock({ notes }) {
     // "rgb(223, 89, 89)",
   ];
 
-  console.log(notes)
+  // console.log(notes)
   return (
     <div className="wrapper">
       { notes.map( note => {
-        console.log(note)
+        // console.log(note)
         return (
           <>
             <div key={note.frontmatter.title} className="note">

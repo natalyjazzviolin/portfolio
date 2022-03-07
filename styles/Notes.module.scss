@@ -18,6 +18,25 @@
         justify-content: center;
         padding: 10vh 0;
     }
+    &__search {
+        > input {
+            width: 80vw;
+            padding: 10px 0;
+            font-family: fonts.$ubuntu;
+            font-size: 1.5em;
+            line-height: 1.7;
+            letter-spacing: .5px;
+            background-color: colors.$primary;
+            border-radius: 5px;
+            border:  3px solid rgb(34, 9, 108);
+            text-align: center;
+            &:focus {
+                outline: none;
+                border:  3px solid rgb(136, 70, 211);
+
+            }
+        }
+    }
 }
 
 

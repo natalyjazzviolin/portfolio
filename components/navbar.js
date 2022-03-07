@@ -105,7 +105,6 @@ const Navbar = () => {
                   role="none"
                   key={link.title}
                   onClick={() => {
-                    console.log(`Link!`);
                     setOpen(false);
                   }}
                 >

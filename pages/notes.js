@@ -67,6 +67,7 @@ export default function Notes({ notes }) {
       <NotesProvider>
         <div className="notes__search">
           <input
+            placeholder="Start typing to filter..."
             onChange={(e) => {
               searchNotes(e.target.value);
             }}

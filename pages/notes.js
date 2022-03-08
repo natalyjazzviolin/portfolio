@@ -22,7 +22,7 @@ export default function Notes({ notes }) {
         </p>
       );
     }else if (filteredNotes.length > 0 && found === true) {
-      return <p>{`Found ${filteredNotes.length} notes:`}</p>;
+      return
     }
   }
 

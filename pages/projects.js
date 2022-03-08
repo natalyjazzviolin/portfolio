@@ -5,8 +5,8 @@ export default function Projects() {
   return (
     <div className="projects">
       <p className="projects__title">
-        When I have time to code outside my full-time job, I like to work on
-        music-related projects. <br></br>Check them out on{" "}
+        When I have time to code outside my full-time job, I like to work on fun
+        projects like this portfolio website. <br></br>Take a look at my code on{" "}
         <span className="highlight">
           <a
             target="_blank"

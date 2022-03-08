@@ -15,7 +15,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 export default function NoteBlock({ notes }) {
 
   const colors = [
-    "rgb(34, 9, 108)",
+    // "rgb(34, 9, 108)",
     "rgb(136, 70, 211)",
     // "rgb(223, 89, 89)",
   ];

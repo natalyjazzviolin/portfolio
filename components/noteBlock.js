@@ -8,22 +8,36 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nord } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import remarkGfm from "remark-gfm";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { useEffect, useState } from "react";
 
 
 //TODO: add copyToClipboard button to code blocks
 
 export default function NoteBlock({ notes }) {
 
+  const [sortedNotes, setSortedNotes] = useState();
   const colors = [
     // "rgb(34, 9, 108)",
     "rgb(136, 70, 211)",
     // "rgb(223, 89, 89)",
   ];
 
+  useEffect(() => {
+    notes.map(note => {
+      // console.log(new Date(note.frontmatter.date));
+      const sorted = notes.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+      setSortedNotes(sorted)
+    })
+  
+    return () => {
+      
+    }
+  }, [notes])
+  
   // console.log(notes)
   return (
     <div className="wrapper">
-      { notes.map( note => {
+      { sortedNotes?.map( note => {
         // console.log(note)
         return (
           <>

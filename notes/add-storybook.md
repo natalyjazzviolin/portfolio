@@ -12,7 +12,7 @@ I needed to add Storybook to an existing React project a few days ago. I ran int
 ```shell
 yarn remove typescript
 ```
-2. Add this snippet to the end of `package.json`:
+2. Add this snippet to the end of `package.json` :
 ```json
 "resolutions": {
     "babel-loader": "8.1.0"

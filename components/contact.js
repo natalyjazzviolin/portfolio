@@ -31,7 +31,7 @@ export default function Contact() {
         <p>
           Send me an{" "}
           <a
-            href="mailto:hello+portfolio@nataly.dev"
+            href="mailto:hello@nataly.dev"
             rel="noopener noreferrer"
             target="_blank"
           >

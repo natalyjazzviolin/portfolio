@@ -1,6 +1,10 @@
 @use 'colors';
 @use 'fonts';
 
+.noshow {
+    display: none;
+}
+
 .about {
     --border-width: 3px;
     padding-top: 5vh;
@@ -23,6 +27,7 @@
         border-radius: 50%;
         &-photo {
             border-radius: 50%;
+            z-index: 2;
         }
     }
     &__bio {

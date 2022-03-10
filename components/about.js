@@ -7,18 +7,19 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 export default function About() {
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 800);
-    return () => clearTimeout(timer);
-  }, []);
+    console.log(loading)
+    handleImageLoad()
+  }, [loading]);
+  const handleImageLoad = (e) => {
+    console.log("load", e);
+    setLoading(false)
+  };
 
     return (
       <section className="about">
-        {loading ? (
+        {loading && (
           <SkeletonTheme
             highlightColor="rgb(220, 215, 198)"
             baseColor="rgb(232, 228, 212)"
@@ -30,8 +31,9 @@ export default function About() {
               width={300}
             />
           </SkeletonTheme>
-        ) : (
-          <div className="about__container">
+        )}
+        {!loading && (
+          <div className={loading ? "noshow" : "about__container"}>
             <Image
               className="about__container-photo"
               src={avatar}
@@ -40,7 +42,9 @@ export default function About() {
               height={300}
               layout="fixed"
               priority={true}
-              onLoadingComplete={() => setLoading(false)}
+              onLoadingComplete={(e) => {
+                handleImageLoad(e);
+              }}
             />
           </div>
         )}

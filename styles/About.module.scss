@@ -8,6 +8,9 @@
     display: grid;
     justify-items: center;
     grid-template-rows: 1fr;
+    &__skeleton {
+        margin-bottom: 16px;
+    }
     &__container {
         display: grid;
         justify-content: center;
@@ -46,6 +49,10 @@
     .about {
         justify-content: center;
         grid-template-columns: repeat(2, fit-content(50%));
+        &__skeleton {
+            // margin-bottom: 0;
+            margin-right: 18px;
+        }
         &__bio{
             padding: 0px;
             padding-left: 5vw;

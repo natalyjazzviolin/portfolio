@@ -19,21 +19,8 @@ export default function About() {
 
     return (
       <section className="about">
-        <div className={loading ? "noshow" : "about__container"}>
-          {loading && (
-            <SkeletonTheme
-              highlightColor="rgb(220, 215, 198)"
-              baseColor="rgb(232, 228, 212)"
-            >
-              <Skeleton
-                className="about__skeleton"
-                circle={true}
-                height={300}
-                width={300}
-              />
-            </SkeletonTheme>
-          )}
-          {!loading && (
+        <div className={loading === true ? "noshow" : "about__container"}>
+          {loading === false ? (
             <Image
               className="about__container-photo"
               src={avatar}
@@ -46,6 +33,18 @@ export default function About() {
                 handleImageLoad(e);
               }}
             />
+          ) : (
+            <SkeletonTheme
+              highlightColor="rgb(220, 215, 198)"
+              baseColor="rgb(232, 228, 212)"
+            >
+              <Skeleton
+                className="about__skeleton"
+                circle={true}
+                height={300}
+                width={300}
+              />
+            </SkeletonTheme>
           )}
         </div>
         <div className="about__bio">

@@ -60,7 +60,7 @@ export default function About() {
 
     return (
       <section className="about">
-        <div className={loading === true ? "noshow" : "about__container"}>
+        <div className={"about__container"}>
           <Image
             className="about__container-photo"
             src={avatar}

@@ -17,16 +17,20 @@
     }
     &__container {
         display: grid;
+        grid-template-areas: 
+        "avatar";
         justify-content: center;
         padding: 10px;
-        background: conic-gradient( 
-            colors.$green 12deg, colors.$red 4deg 72deg, colors.$skyblue 72deg 134deg, colors.$violet 134deg 226deg, colors.$orange 226deg 300deg,
-            colors.$green 300deg 360deg);
+
         height: 320px;
         width: 320px;
         border-radius: 50%;
         &-photo {
             border-radius: 50%;
+            grid-row: avatar;
+        }
+        &-svg {
+            position: absolute;
         }
     }
     &__bio {

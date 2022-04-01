@@ -6,14 +6,15 @@ import { motion } from "framer-motion";
 
 export default function About() {
 
-  const [loading, setLoading] = useState(true);
+  const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    console.log(loading)
     handleImageLoad()
-  }, [loading]);
+  }, [loaded]);
   const handleImageLoad = (e) => {
-    console.log("load", e);
-    setLoading(false)
+    if (typeof e !== undefined && e?.hasOwnProperty("naturalWidth")) {
+      console.log("load", e);
+      setLoaded(true);
+    }
   };
 
   const circle ={
@@ -81,7 +82,7 @@ export default function About() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             variants={circle}
-            animate={"turn"}
+            animate={loaded ? "turn" : ""}
           >
             <motion.path
               fillRule="evenodd"
@@ -90,7 +91,7 @@ export default function About() {
               fill="#E95757"
               variants={stripe}
               initial="initial"
-              animate="red"
+              animate={loaded ? "red" : ""}
             />
             <motion.path
               fillRule="evenodd"
@@ -99,7 +100,7 @@ export default function About() {
               fill="#E9C957"
               variants={stripe}
               initial="initial"
-              animate="yellow"
+              animate={loaded ? "yellow" : ""}
             />
             <motion.path
               fillRule="evenodd"
@@ -108,7 +109,7 @@ export default function About() {
               fill="#BE74E0"
               variants={stripe}
               initial="initial"
-              animate="periwinkle"
+              animate={loaded ? "periwinkle" : ""}
             />
             <motion.path
               fillRule="evenodd"
@@ -117,7 +118,7 @@ export default function About() {
               fill="#5777E9"
               variants={stripe}
               initial="initial"
-              animate="blue"
+              animate={loaded ? "blue" : ""}
             />
             <motion.path
               fillRule="evenodd"
@@ -126,7 +127,7 @@ export default function About() {
               fill="#E99457"
               variants={stripe}
               initial="initial"
-              animate="orange"
+              animate={loaded ? "orange" : ""}
             />
             <motion.path
               fillRule="evenodd"
@@ -135,7 +136,7 @@ export default function About() {
               fill="#7D57E9"
               variants={stripe}
               initial="initial"
-              animate="purple"
+              animate={ loaded ? "purple" : ""}
             />
             <motion.path
               fillRule="evenodd"
@@ -144,7 +145,7 @@ export default function About() {
               fill="#74E09F"
               variants={stripe}
               initial="initial"
-              animate="green"
+              animate={loaded ? "green" : ""}
             />
           </motion.svg>
         </div>

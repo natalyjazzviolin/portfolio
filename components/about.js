@@ -56,8 +56,6 @@ export default function About() {
       transition: { delay: 1.666, duration: 0.6 },
       opacity: 0
     },
-
-    // closed: { opacity: 1, rotate: 0, y: 0 },
   };
 
     return (

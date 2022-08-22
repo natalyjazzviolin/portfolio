@@ -152,15 +152,15 @@ export default function About() {
         <div className="about__bio">
           <p>
             {" "}
-            Nataly is a jazz violinist and self-taught fullstack developer. She
-            is currently working with React, Laravel, and Python at{" "}
+            Nataly is a jazz violinist and self-taught developer. She
+            is currently working with React, Python and lots of other fun technologies at{" "}
             <span className="highlight">
               <a
                 target="_blank"
-                href="https://www.wizardpig.com"
+                href="https://www.airbyte.io"
                 rel="noreferrer"
               >
-                WizardPig Inc.
+                Airbyte.
               </a>
             </span>
           </p>

@@ -136,7 +136,7 @@ export default function About() {
               fill="#7D57E9"
               variants={stripe}
               initial="initial"
-              animate={ loaded ? "purple" : ""}
+              animate={loaded ? "purple" : ""}
             />
             <motion.path
               fillRule="evenodd"
@@ -152,15 +152,16 @@ export default function About() {
         <div className="about__bio">
           <p>
             {" "}
-            Nataly is a jazz violinist and self-taught developer. She
-            is currently working with React, Python and lots of other fun technologies at{" "}
+            Nataly is a jazz violinist and self-taught developer. She is
+            currently working with data and lots of fun
+            technologies at{" "}
             <span className="highlight">
               <a
                 target="_blank"
-                href="https://www.airbyte.io"
+                href="https://clickhouse.com/"
                 rel="noreferrer"
               >
-                Airbyte.
+                ClickHouse.
               </a>
             </span>
           </p>
